@@ -25,3 +25,16 @@ class DoublyLinkedList(SinglyLinkedList):
     
     def insertAtTail(self, node):
         return self.insertAtIndex(node, self.length)
+
+    def removeAtIndex(self, index):
+        node = super().removeAtIndex(index)
+        if node != None:
+            if node.next != None:
+                node.next.prev = node.prev
+        return node
+
+    def removeAtHead(self):
+        return self.removeAtIndex(0)
+    
+    def removeAtTail(self):
+        return self.removeAtIndex(self.length - 1)
