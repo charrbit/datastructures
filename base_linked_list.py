@@ -26,3 +26,30 @@ class BaseLinkedList:
             current_index += 1
             current_node = current_node.next
         return current_node
+    
+    def __insertAtIndex(self, node, index):
+        # get the node before the desired index for O(n)
+        # insertion anywhere other than the head and tail
+        node_before = self.__getNodeAtIndex(index - 1)
+        # insert at head, O(1)
+        if index == 0:
+            node.next = self.head
+            # first node inserted
+            if self.head == None:
+                self.tail = node
+            self.head = node
+        # insert at tail, O(1)
+        elif index == self.length:
+            node_before = self.tail
+            node.next = node_before.next
+            node_before.next = node
+            self.tail = node
+        # insert somewhere in between, O(n)
+        else:
+            # if index is not out of range
+            if node_before != None:
+                node.next = node_before.next
+                node_before.next = node
+            else: return None, node_before
+        self.length += 1
+        return node, node_before
