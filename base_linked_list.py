@@ -14,6 +14,22 @@ class BaseLinkedList:
         self.tail = None
         self.length = 0
 
+    def __iter__(self):
+        self.iterator = self.head
+        # tracks the current node while iterating
+        self.index = 0
+        return self
+
+    def __next__(self):
+        # end of list reached
+        if self.index > self.length - 1:
+            raise StopIteration
+        data = self.iterator.data
+        # move to the next node
+        self.iterator = self.iterator.next
+        self.index += 1
+        return data
+
     def __len__(self):
         return self.length
     
