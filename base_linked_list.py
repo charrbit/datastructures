@@ -53,3 +53,31 @@ class BaseLinkedList:
             else: return None, node_before
         self.length += 1
         return node, node_before
+    
+    def __removeAtIndex(self, index):
+        # get the node before the desired index for O(n)
+        # removal anywhere other than the head and tail
+        node_before = self.__getNodeAtIndex(index - 1)
+        # remove at head, O(1)
+        if index == 0:
+            node = self.head
+            # node to remove is the only node in the list
+            if self.head == self.tail:
+                self.head = self.tail = None
+            else:
+                self.head = node.next
+        # remove at tail, O(1)
+        elif index == self.length - 1:
+            node = self.tail
+            node_before.next = node.next
+            self.tail = node_before
+        # remove somewhere in between, O(n)
+        else:
+            # if index is not out of range
+            if node_before != None and node_before != self.tail:
+                node = node_before.next
+                node_before.next = node.next
+            else: return
+        self.length -= 1
+        return node
+    
