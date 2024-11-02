@@ -6,7 +6,7 @@
 #       next: node
 
 # utilizes a head "pointer" to track the beginning of the list, a tail "pointer" for subclass
-# code reusability and, a length for performance benefits during insertion and deletion
+# code reusability, and a length for performance benefits during insertion and deletion
 
 class BaseLinkedList:
     def __init__(self):
