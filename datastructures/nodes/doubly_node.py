@@ -1,4 +1,4 @@
-from singly_node import SinglyNode
+from datastructures.nodes.singly_node import SinglyNode
 
 # doubly linked list node with two "pointers" 
 # to the next and previous nodes in the list

@@ -1,4 +1,4 @@
-from base_node import BaseNode
+from datastructures.nodes.base_node import BaseNode
 
 # singly linked list node with one
 # "pointer" to the next node in the list
