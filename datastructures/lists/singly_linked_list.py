@@ -1,4 +1,4 @@
-from base_linked_list import BaseLinkedList
+from datastructures.lists.base_linked_list import BaseLinkedList
 
 # singly linked list derived from BaseLinkedList
 

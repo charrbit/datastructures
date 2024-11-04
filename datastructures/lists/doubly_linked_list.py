@@ -1,4 +1,4 @@
-from singly_linked_list import SinglyLinkedList
+from datastructures.lists.singly_linked_list import SinglyLinkedList
 
 # doubly linked list
 

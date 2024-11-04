@@ -1,4 +1,4 @@
-from doubly_linked_list import DoublyLinkedList
+from datastructures.lists.doubly_linked_list import DoublyLinkedList
 
 # circular linked list
 
