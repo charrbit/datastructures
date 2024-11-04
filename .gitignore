@@ -1,0 +1,14 @@
+# Distribution / Packaging
+dist/
+build/
+*.egg-info/
+
+# Environments
+.venv/
+
+# Python
+__pycache__/
+/**/__pycache__
+
+# Visual Studo Code
+*.code-workspace
